@@ -1,0 +1,44 @@
+html{
+    text-align: center;
+}
+
+body{
+    font-family:'Times New Roman', Times, serif
+}
+
+h1{
+    color: green;
+    text-align: center;
+}
+
+
+p{
+
+    font-size: 32px;
+    text-align: center;
+    color: black;
+
+}
+
+ul{
+    font-size: 20px;
+    text-align: left;
+    color: purple;
+}
+ img{
+
+    display:block;
+    justify-content: end;
+    margin: 0 auto;
+}
+
+ol{
+    font-size: 30px;
+}
+
+a{
+    
+    color: green;
+    text-align: auto;
+    text-decoration:none;
+}

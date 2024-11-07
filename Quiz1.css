@@ -1,0 +1,132 @@
+body {
+    background-color: #1240b3;
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    background-color: #00296b;
+    top: 0;
+    width: 100%;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+header h1{
+    margin: 0;
+}
+
+header h1 a{
+    
+    color:#ddd;
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+header nav li {
+  
+    font-size: 20px;
+}
+
+header nav a {
+    color: #FFD500;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    color: white;
+}
+
+.titulo h1{
+    color: white;
+    padding: 50px;
+}
+
+
+
+.quiz{
+    color: #FFD500;
+}
+
+
+#question-container div {
+    margin-bottom: 50px;
+}
+
+label {
+    display: block; 
+}
+
+.botao {
+    justify-content: flex-start;
+    background-color: #FFD500;
+    padding: 20px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    margin: left;
+    width: 400px;
+    height: 80px;
+}
+
+.result{
+    font-size: 20px;
+}
+
+.questionContainer {
+    border: 2px solid #FFD500;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px; /* Tamanho máximo do contêiner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.question-title {
+    font-size: 240px; /* Ajuste o valor conforme necessário */
+    font-family: 'Arial', sans-serif; /* Opcional: mude a fonte */
+    color: #FFD500; /* Mude a cor, se necessário */
+}
+
+
+h3{
+    font-size: 70px;
+}
+
+.container {
+    border: 5px solid #FFD500;
+    padding: 200px; /* Aumenta o espaçamento interno */
+    background-color: #00296b;
+    border-radius: 100px;
+    margin: 20px auto;
+    max-width: 800px; /* Aumenta o tamanho máximo do contêiner */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+input[type="radio"] {
+    transform: scale(1.5); /* Aumenta o tamanho dos checkboxes */
+    margin: 29px; /* Adiciona espaçamento ao redor */
+    padding: 100px;
+}
+

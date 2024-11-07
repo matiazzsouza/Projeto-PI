@@ -1,0 +1,176 @@
+body {
+  background-color: #003f88;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+header {
+   background-color: #00296b;
+   color: #fff;
+   padding: 20px;
+   display: flex;
+   justify-content: space-around;
+ }
+ header h1 {
+   margin: 0;
+ }
+ 
+ header nav ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display:inline-flex;
+   justify-content: space-around;
+ }
+ 
+ header nav li {
+   margin-right: 20px;
+   display: flex;
+ }
+ 
+ header nav a {
+   color: #fff;
+   text-decoration: none;
+ }
+
+    header nav a:hover {
+      color: #5069a3;
+    }
+ .primeira {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 200px;
+  background-color: #003f88;
+  color: #fff;
+  justify-content: flex-start;
+  height: 200px;
+  margin: 0;
+  text-align: left;
+  margin-bottom: 20px;
+  width: 400px;
+}
+.segunda {
+  background-color: #fdc500;
+  color: #00296b;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 50px; /* Ajuste o padding para organizar o layout */
+}
+
+   .terceira {
+     flex-wrap: wrap;
+     padding: 100px;
+     background-color: #003f88;
+     color: #fff;
+     margin: 0 auto;
+     text-align: center;
+     display: flex;
+     justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+     height: 300px /* Para ocupar a altura total da viewport */
+}
+.button1 {
+ justify-content: flex-start;
+ background-color: #FFD500;
+ padding: 20px 20px;
+ border-radius: 20px;
+ border: none;
+ font-size: 40px;
+ cursor: pointer;
+ margin: left;
+ width: 400px;
+ height: 80px;
+}
+  button {
+     padding: 10px;
+     font-size: 20px;
+     background-color: #FFD500;
+     color: #00296b;
+     border: none;
+     cursor: pointer;
+     border-radius: 20px;
+     padding: 15px 32px;
+   }
+   .form {
+     border: 10px solid #000000;
+    
+     border-radius: 10px;
+     margin:0 auto;
+     text-align: center;
+     color: #fff;
+   }
+
+.label {
+ color: #fff;
+}
+
+footer {
+background-color: #00296b;
+color: #fff;
+padding: 20px;
+text-align: center;
+clear: both;
+}
+.team-section {
+  display: flex;
+  flex-wrap: wrap; /* Permite que as divs dos membros se ajustem se o espaço for pequeno */
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre as divs dos membros */
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-member {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 220px; /* Ajuste a largura dos membros */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.team-member img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+h1 {
+ margin-bottom: 30px;
+}
+
+h2 {
+ font-size: 1.5em;
+ margin: 10px 0;
+}
+
+p {
+ font-size: 1em;
+ color: #555;
+}
+
+.button1 a {
+ text-decoration: none;
+}
+
+.container {
+ border: 1px solid #000000;
+ padding: 20px; 
+ width: 300px;
+ height: 300px; 
+ background-color: #fff;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ margin: 0 auto; 
+ top: 50%; 
+ left: 50%; 
+ color: #00296b;
+ 
+}
