@@ -94,6 +94,7 @@ function displayResult() {
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `<h2>Quiz concluído!</h2><p>Você acertou ${score} de ${questions.length} perguntas.</p>`;
 
+    // Exibe as respostas do usuário e as corretas
     questions.forEach((q, index) => {
         const isCorrect = userAnswers[index] === q.correctAnswer;
         const userAnswer = userAnswers[index] !== null ? q.answers[userAnswers[index]] : 'Nenhuma resposta';
@@ -107,6 +108,14 @@ function displayResult() {
             </div>
         `;
     });
+
+    // Link para tentar novamente, recarregando a página
+    const retryLink = document.createElement('a');
+    retryLink.href = 'quiz.html'; // Recarrega a página atual
+    retryLink.textContent = 'Tentar novamente';
+    retryLink.classList.add('retry-button'); // Classe para estilizar como botão, se desejar
+
+    resultDiv.appendChild(retryLink);
 }
 
 window.onload = loadQuestion;

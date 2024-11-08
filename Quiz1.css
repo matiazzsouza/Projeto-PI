@@ -130,3 +130,19 @@ input[type="radio"] {
     padding: 100px;
 }
 
+a.retry-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    text-align: center;
+    text-decoration: none; /* Remove o sublinhado do link */
+    border-radius: 5px; /* Cantos arredondados */
+    font-weight: bold; /* Negrito */
+    transition: background-color 0.3s ease; /* Efeito de transição ao passar o mouse */
+}
+
+a.retry-button:hover {
+    background-color: #45a049; /* Cor ao passar o mouse */
+}
