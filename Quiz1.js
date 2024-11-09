@@ -29,6 +29,8 @@ const questions = [
 let currentQuestionIndex = 0;
 let score = 0;
 let userAnswers = [];
+let timer;
+let timeLeft = 15; // Definindo 15 segundos para cada pergunta
 
 function loadQuestion() {
     const questionContainer = document.querySelector('.question-section h1');
@@ -43,6 +45,10 @@ function loadQuestion() {
         button.textContent = currentQuestion.answers[index];
         button.onclick = () => recordAnswer(index);
     });
+
+    // Reinicia o tempo a cada nova pergunta
+    resetTimer();
+    startTimer();
 }
 
 function recordAnswer(selectedAnswer) {
@@ -86,7 +92,7 @@ function displayResult() {
 
     // Botão para voltar à página inicial do quiz
     questionContainer.innerHTML += `
-        <a href="Quiz.html" class="button">tentar novamente</a>
+        <a href="Quiz.html" class="button">Tentar Novamente</a>
     `;
 
     // Adiciona a pergunta de confirmação para voltar à Linha do Tempo
@@ -105,6 +111,28 @@ function redirectToTimeline(answer) {
     } else {
         window.location.href = 'Ciberfe.html'; // Redireciona de volta para o Quiz
     }
+}
+
+function startTimer() {
+    timer = setInterval(() => {
+        const timerBarInner = document.querySelector('.timer-bar-inner');
+        
+        if (timeLeft > 0) {
+            timeLeft--;
+            const percentage = (timeLeft / 15) * 100;  // Calcula a porcentagem de tempo restante
+            timerBarInner.style.width = `${percentage}%`;  // Atualiza a largura da barra verde
+        } else {
+            clearInterval(timer);
+            recordAnswer(null); // Chama recordAnswer automaticamente quando o tempo acaba
+        }
+    }, 1000);
+}
+
+// Função para resetar o temporizador
+function resetTimer() {
+    timeLeft = 15; // Reseta o tempo para 15 segundos
+    document.querySelector('.timer-bar').style.width = '100%';
+    clearInterval(timer); // Limpa o temporizador atual
 }
 
 window.onload = loadQuestion;
