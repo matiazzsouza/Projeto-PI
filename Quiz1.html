@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Quiz1.css?v=1.2">
-    <title>CiberFé.com</title>
+    <title>Quiz Estilo Kahoot</title>
+    <link rel="stylesheet" href="Quiz1.css">
 </head>
 <body>
     <header>
@@ -18,19 +18,25 @@
         </nav>
     </header>
 
-    <br><br><br>
+    
     <div class="titulo">
         <h1>QUIZ OF CiberFé</h1>
     </div>
-
-    <div class="container">
-        <div class="quiz" id="quiz-container">
-            <div id="question-container"></div>
-            <button class="botao" onclick="submitAnswers()">Submit Answers</button>
-            <div class="result" id="result"></div>
+    
+    <div class ="container">
+    <div class="quiz-container">
+        <div class="question-section">
+            <h1>Quem foi o autor da maioria das cartas do Novo Testamento?</h1>
         </div>
+        <div class="answers-grid">
+            <button class="answer answer-1">Pedro</button>
+            <button class="answer answer-2">João</button>
+            <button class="answer answer-3">Paulo</button>
+            <button class="answer answer-4">Tiago</button>
+        </div>
+        <div class="timer-bar"></div>
     </div>
-
-    <script src="Quiz1.js?v=1.2"></script>
+</div>
+    <script src="Quiz1.js"></script>
 </body>
 </html>

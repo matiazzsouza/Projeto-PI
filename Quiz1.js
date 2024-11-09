@@ -27,58 +27,34 @@ const questions = [
 ];
 
 let currentQuestionIndex = 0;
-let timer;
-const timePerQuestion = 120;
 let score = 0;
 let userAnswers = [];
 
 function loadQuestion() {
-    const questionContainer = document.getElementById('question-container');
-    questionContainer.innerHTML = '';
+    const questionContainer = document.querySelector('.question-section h1');
+    const answerButtons = document.querySelectorAll('.answer');
+    const currentQuestion = questions[currentQuestionIndex];
 
-    const q = questions[currentQuestionIndex];
+    // Exibe a pergunta
+    questionContainer.textContent = currentQuestion.question;
 
-    const timerDiv = document.createElement('div');
-    timerDiv.classList.add('timer');
-    timerDiv.innerText = `Tempo restante: ${timePerQuestion} segundos`;
-    questionContainer.appendChild(timerDiv);
-
-    const questionTitle = document.createElement('h3');
-    questionTitle.textContent = q.question;
-    questionContainer.appendChild(questionTitle);
-
-    q.answers.forEach((answer, i) => {
-        const label = document.createElement('label');
-        label.innerHTML = `<input type="radio" name="question${currentQuestionIndex}" value="${i}"> ${answer}`;
-        questionContainer.appendChild(label);
+    // Exibe as respostas
+    answerButtons.forEach((button, index) => {
+        button.textContent = currentQuestion.answers[index];
+        button.onclick = () => recordAnswer(index);
     });
-
-    startTimer(timerDiv);
 }
 
-function startTimer(timerDiv) {
-    let timeLeft = timePerQuestion;
-    timer = setInterval(() => {
-        timeLeft--;
-        timerDiv.innerText = `Tempo restante: ${timeLeft} segundos`;
+function recordAnswer(selectedAnswer) {
+    // Armazena a resposta do usuário
+    userAnswers.push(selectedAnswer);
 
-        if (timeLeft <= 0) {
-            clearInterval(timer);
-            submitAnswers();
-        }
-    }, 1000);
-}
-
-function submitAnswers() {
-    clearInterval(timer);
-
-    const selectedAnswer = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
-    userAnswers.push(selectedAnswer ? parseInt(selectedAnswer.value) : null);
-
-    if (selectedAnswer && parseInt(selectedAnswer.value) === questions[currentQuestionIndex].correctAnswer) {
+    // Verifica se a resposta está correta para atualizar a pontuação
+    if (selectedAnswer === questions[currentQuestionIndex].correctAnswer) {
         score++;
     }
 
+    // Passa para a próxima pergunta ou exibe o resultado
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         loadQuestion();
@@ -88,19 +64,18 @@ function submitAnswers() {
 }
 
 function displayResult() {
-    const questionContainer = document.getElementById('question-container');
-    questionContainer.innerHTML = '';
+    const questionContainer = document.querySelector('.quiz-container');
+    questionContainer.innerHTML = `
+        <h1>Quiz Concluído!</h1>
+        <p>Você acertou ${score} de ${questions.length} perguntas.</p>
+    `;
 
-    const resultDiv = document.getElementById('result');
-    resultDiv.innerHTML = `<h2>Quiz concluído!</h2><p>Você acertou ${score} de ${questions.length} perguntas.</p>`;
-
-    // Exibe as respostas do usuário e as corretas
     questions.forEach((q, index) => {
         const isCorrect = userAnswers[index] === q.correctAnswer;
         const userAnswer = userAnswers[index] !== null ? q.answers[userAnswers[index]] : 'Nenhuma resposta';
         const correctAnswer = q.answers[q.correctAnswer];
 
-        resultDiv.innerHTML += `
+        questionContainer.innerHTML += `
             <div>
                 <p><strong>${index + 1}. ${q.question}</strong></p>
                 <p>Sua resposta: <span style="color: ${isCorrect ? 'green' : 'red'}">${userAnswer}</span></p>
@@ -109,13 +84,27 @@ function displayResult() {
         `;
     });
 
-    // Link para tentar novamente, recarregando a página
-    const retryLink = document.createElement('a');
-    retryLink.href = 'quiz.html'; // Recarrega a página atual
-    retryLink.textContent = 'Tentar novamente';
-    retryLink.classList.add('retry-button'); // Classe para estilizar como botão, se desejar
+    // Botão para voltar à página inicial do quiz
+    questionContainer.innerHTML += `
+        <a href="Quiz.html" class="button">tentar novamente</a>
+    `;
 
-    resultDiv.appendChild(retryLink);
+    // Adiciona a pergunta de confirmação para voltar à Linha do Tempo
+    const confirmDiv = document.createElement('div');
+    confirmDiv.innerHTML = `
+        <p>Deseja voltar para a Linha do Tempo?</p>
+        <button onclick="redirectToTimeline(true)">Sim</button>
+        <button onclick="redirectToTimeline(false)">Não</button>
+    `;
+    questionContainer.appendChild(confirmDiv);
+}
+
+function redirectToTimeline(answer) {
+    if (answer) {
+        window.location.href = 'Linha-do-tempo.html'; // Redireciona para a Linha do Tempo
+    } else {
+        window.location.href = 'Ciberfe.html'; // Redireciona de volta para o Quiz
+    }
 }
 
 window.onload = loadQuestion;
