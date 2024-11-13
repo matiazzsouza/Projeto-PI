@@ -61,7 +61,7 @@ header nav a:hover {
 .container {
     margin-top: 50px; /* Garante que o container fique abaixo do título */
     border: 5px solid #FFD500;
-    padding: 220px; /* Ajustando o padding para melhor visualização */
+    padding: 400px; /* Ajustando o padding para melhor visualização */
     background-color: #00296b;
     border-radius: 100px;
     margin: 20px auto;

@@ -1,6 +1,13 @@
-body{
-
-    background-color: #FFD500;
+body {
+  background-color: #1240b3;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  flex-direction: column; /* Para empilhar os elementos na tela */
+  justify-content: flex-start; /* Para garantir que tudo fique no topo */
 }
 
 header {
