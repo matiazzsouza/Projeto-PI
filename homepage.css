@@ -91,8 +91,6 @@ header nav a:hover {
   margin: 0 auto;
   flex-direction: column;
   margin-top: 40px;
-
-  
 }
 
 .terceira {
@@ -109,9 +107,6 @@ header nav a:hover {
 
   flex-direction: column;
 
-
-
-  
 }
 
 .button1 {
@@ -161,7 +156,6 @@ button {
   margin: 0 auto;
   text-align: center;
   color: #fff;    
-  
 }
 
 
@@ -306,12 +300,6 @@ textarea {
   margin-bottom: 15px;
 }
 
-.cartao-integrante:hover{
-  transform: scale(1.05);
-  transition: transform 0.3s ease-in-out;
-
-}
-
 .descricao-integrante {
   font-size: 0.9em;
   color: #00296b;
@@ -359,7 +347,6 @@ h3 {
   width: 400px; /* Ajuste a largura conforme necessário */
 
   margin: 0 auto;
-
 
 }    
 
