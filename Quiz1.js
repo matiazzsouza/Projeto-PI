@@ -107,26 +107,36 @@ function displayResult() {
 
 function redirectToTimeline(answer) {
     if (answer) {
-        window.location.href = 'Linha-do-tempo.html'; // Redireciona para a Linha do Tempo
+        window.location.href = 'Linhadotempo.html'; // Redireciona para a Linha do Tempo
     } else {
         window.location.href = 'Ciberfe.html'; // Redireciona de volta para o Quiz
     }
 }
-
 function startTimer() {
     timer = setInterval(() => {
         const timerBarInner = document.querySelector('.timer-bar-inner');
-        
+
         if (timeLeft > 0) {
             timeLeft--;
-            const percentage = (timeLeft / 15) * 100;  // Calcula a porcentagem de tempo restante
-            timerBarInner.style.width = `${percentage}%`;  // Atualiza a largura da barra verde
+            const percentage = (timeLeft / 15) * 100;
+            timerBarInner.style.width = `${percentage}%`;
+
+            // Alteração de cor com base no tempo restante
+            if (timeLeft <= 5) {
+                timerBarInner.style.backgroundColor = 'red';
+            } else if (timeLeft <= 10) {
+                timerBarInner.style.backgroundColor = 'yellow';
+            } else {
+                timerBarInner.style.backgroundColor = 'green';
+            }
         } else {
             clearInterval(timer);
-            recordAnswer(null); // Chama recordAnswer automaticamente quando o tempo acaba
+            recordAnswer(null);
         }
     }, 1000);
 }
+
+
 
 // Função para resetar o temporizador
 function resetTimer() {
